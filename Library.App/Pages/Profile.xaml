@@ -1,0 +1,78 @@
+﻿<Page x:Class="Library.App.Pages.Profile"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Library.App.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="541" d:DesignWidth="820"
+      Title="Profile"
+      FontFamily="Times New Roman" FontSize="18">
+
+    <Grid FlowDirection="RightToLeft">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid Background="#FF25252B" Grid.RowSpan="4" Margin="10,0,0,0">
+            <Button x:Name="btnDeleteAccount" Content="حذف حساب" HorizontalAlignment="Center" Margin="0,501,0,0" VerticalAlignment="Top" Background="#FF730000" BorderBrush="#FFDCDBD1" Foreground="#FFDCDBD1" Width="174" Height="30" FontSize="22" Cursor="Hand" Click="btnDeleteAccount_Click"/>
+            <Button x:Name="btnLogout" Content="خروج از حساب" HorizontalAlignment="Center" Margin="0,460,0,0" VerticalAlignment="Top" Background="#FFDEC205" BorderBrush="#FFDCDBD1" Foreground="Black" Width="174" Height="30" FontSize="22" Cursor="Hand"/>
+            <Button x:Name="btnUnreturnedBooks" Content="کتاب های برگشت داده نشده" HorizontalAlignment="Center" Margin="0,367,0,0" VerticalAlignment="Top" Background="#FF55657B" BorderBrush="#FFDCDBD1" Foreground="#FFDCDBD1" Width="174" Height="30" FontSize="18" Cursor="Hand" Click="btnUnreturnedBooks_Click"/>
+            <Button x:Name="btnUnreadBooks" Content="کتاب های خوانده نشده" HorizontalAlignment="Center" Margin="0,318,0,0" VerticalAlignment="Top" Background="#FF55657B" BorderBrush="#FFDCDBD1" Foreground="#FFDCDBD1" Width="174" Height="30" FontSize="22" Cursor="Hand" Click="btnUnreadBooks_Click"/>
+            <Button x:Name="btnAllBooks" Content="همه کتاب ها" HorizontalAlignment="Center" Margin="0,270,0,0" VerticalAlignment="Top" Background="#FF25252B" BorderBrush="#FFDCDBD1" Foreground="#FFDCDBD1" Width="174" Height="30" FontSize="22" Cursor="Hand" Click="btnAllBooks_Click"/>
+            <Button x:Name="btnEdit" Content="ویرایش" HorizontalAlignment="Center" Margin="0,224,0,0" VerticalAlignment="Top" Background="#FF55657B" BorderBrush="#FFDCDBD1" Foreground="#FFDCDBD1" Width="174" Height="30" FontSize="22" Cursor="Hand" Click="btnEdit_Click"/>
+            <Image x:Name="image" HorizontalAlignment="Center" Height="100" Margin="0,10,0,0" VerticalAlignment="Top" Width="100" Stretch="Fill" Source="/user_512px.png"/>
+            <Label x:Name="label1_Copy17" Foreground="#FFDCDBD1" Content="نام کاربر" HorizontalAlignment="Center" VerticalAlignment="Top" Width="174" Height="32" FontSize="20" HorizontalContentAlignment="Center" Margin="0,110,0,0"/>
+            <Label x:Name="label1_Copy" Foreground="#FFDCDBD1" Content="________________________________________________________________________" HorizontalAlignment="Center" VerticalAlignment="Top" Width="174" Height="32" FontSize="20" HorizontalContentAlignment="Center" Margin="0,142,0,0"/>
+            <Button x:Name="btnEditImage" Content="" HorizontalAlignment="Left" Margin="118,1,0,0" VerticalAlignment="Top" BorderBrush="#FFDCDBD1" Foreground="#FFDCDBD1" Width="47" Height="43" FontSize="22" Cursor="Hand" Visibility="Hidden" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.623"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <Button.Background>
+                    <ImageBrush ImageSource="/Pages/edit_512px.png" TileMode="None"/>
+                </Button.Background>
+            </Button>
+            <Label x:Name="label1_Copy1" Foreground="#FFDCDBD1" Content="نام کاربر" HorizontalAlignment="Center" VerticalAlignment="Top" Width="174" Height="32" FontSize="20" HorizontalContentAlignment="Center" Margin="0,110,0,0"/>
+
+        </Grid>
+        <Grid Background="#FF25252B" Margin="10,0,10,20" Grid.Column="1" Grid.ColumnSpan="3">
+            <Label x:Name="label1_Copy2" Foreground="#FFDCDBD1" Content="اعضای ویژه" HorizontalAlignment="Left" VerticalAlignment="Top" Width="121" Height="32" FontSize="20" HorizontalContentAlignment="Center"/>
+            <Label x:Name="label1_Copy3" Foreground="#FFDCDBD1" Content="___________________________________________________________________________________________________________________" HorizontalAlignment="Center" VerticalAlignment="Top" Width="605" Height="32" FontSize="20" HorizontalContentAlignment="Center" Margin="0,16,0,0"/>
+            <Grid Background="#FF55657B" Margin="10,48,10,48"/>
+            <Label x:Name="label1_Copy4" Foreground="#FFDEC205" Content="در حال حاضر شما عضو ویژه نمی باشید ! در صورت تمایل برای استفاده از امکانات اعضای ویژه باید اشتراک خریداری نمایید" HorizontalAlignment="Center" VerticalAlignment="Center" Width="585" Height="24" FontSize="14" HorizontalContentAlignment="Center"/>
+            <Button x:Name="btnJoinSpecial" Content="عضو" HorizontalAlignment="Left" Margin="393,75,0,0" VerticalAlignment="Top" Background="#FF258A2F" BorderBrush="#FFDCDBD1" Foreground="#FFDCDBD1" Width="192" Height="30" FontSize="22" Cursor="Hand"/>
+        </Grid>
+        <Grid Background="#FF25252B" Margin="10,120,10,0" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="2">
+            <Label x:Name="label1_Copy5" Foreground="#FFDCDBD1" Content="اطلاعات کاربر" HorizontalAlignment="Left" VerticalAlignment="Top" Width="121" Height="32" FontSize="20" HorizontalContentAlignment="Center"/>
+            <Label x:Name="label1_Copy6" Foreground="#FFDCDBD1" Content="__________________________________________________________________________________________________________________________________________________________" HorizontalAlignment="Center" VerticalAlignment="Top" Width="605" Height="32" FontSize="20" HorizontalContentAlignment="Center" Margin="0,16,0,0"/>
+            <Label x:Name="label1_Copy7" Foreground="#FFDCDBD1" Content="نام کاربری" HorizontalAlignment="Left" VerticalAlignment="Top" Width="121" Height="32" FontSize="20" HorizontalContentAlignment="Center" Margin="0,47,0,0"/>
+            <Label x:Name="label1_Copy8" Foreground="#FFDCDBD1" Content="کلمه عبور" HorizontalAlignment="Left" VerticalAlignment="Top" Width="121" Height="32" FontSize="20" HorizontalContentAlignment="Center" Margin="0,79,0,0"/>
+            <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="121,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="156"/>
+            <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Margin="121,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="156"/>
+            <Label x:Name="label1_Copy9" Foreground="#FFDCDBD1" Content="ایمیل" HorizontalAlignment="Left" VerticalAlignment="Top" Width="121" Height="32" FontSize="20" HorizontalContentAlignment="Center" Margin="299,47,0,0"/>
+            <Label x:Name="label1_Copy10" Foreground="#FFDCDBD1" Content="تکرار کلمه عبور" HorizontalAlignment="Left" VerticalAlignment="Top" Width="121" Height="32" FontSize="20" HorizontalContentAlignment="Center" Margin="299,79,0,0"/>
+            <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Margin="420,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="156"/>
+            <TextBox x:Name="textBox_Copy2" HorizontalAlignment="Left" Margin="420,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="156"/>
+            <Button x:Name="btnLogout_Copy" Content="ویرایش" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFDEC205" BorderBrush="#FFDCDBD1" Foreground="Black" Width="156" Height="26" FontSize="22" Cursor="Hand" Margin="420,115,0,0"/>
+        </Grid>
+        <Grid Background="#FF25252B" Margin="10,10,10,0" Grid.Column="1" Grid.ColumnSpan="3" Grid.RowSpan="2" Grid.Row="2">
+            <Label x:Name="label1_Copy11" Foreground="#FFDCDBD1" Content="همه کتاب ها" HorizontalAlignment="Left" VerticalAlignment="Top" Width="121" Height="32" FontSize="20" HorizontalContentAlignment="Center"/>
+            <Label x:Name="label1_Copy12" Foreground="#FFDCDBD1" Content="__________________________________________________________________________________________________________________________________________________________" HorizontalAlignment="Center" VerticalAlignment="Top" Width="605" Height="32" FontSize="20" HorizontalContentAlignment="Center" Margin="0,16,0,0"/>
+            <Label x:Name="label1_Copy18" Foreground="#FFDCDBD1" Content="تعداد : 0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="205" Height="32" FontSize="20" HorizontalContentAlignment="Center" Margin="390,0,0,0"/>
+            <DataGrid x:Name="dataGrid" d:ItemsSource="{d:SampleData ItemCount=3}" Margin="0,48,0,0" Background="#FF25252B"/>
+        </Grid>
+    </Grid>
+</Page>

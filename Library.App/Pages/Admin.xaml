@@ -1,0 +1,67 @@
+﻿<Page x:Class="Library.App.Pages.Admin"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Library.App.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="541" d:DesignWidth="820"
+      Title="Admin"
+      FontFamily="Times New Roman" FontSize="18">
+
+    <Grid FlowDirection="RightToLeft">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="65*" />
+            <ColumnDefinition Width="99*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid Background="#FF25252B" Margin="0,0,10,10">
+            <Label x:Name="label1_Copy7" Foreground="#FFDCDBD1" Content="نام کاربری" HorizontalAlignment="Left" VerticalAlignment="Top" Width="90" Height="32" FontSize="20" HorizontalContentAlignment="Center" Margin="4,5,0,0"/>
+            <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="106,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199"/>
+            <Label x:Name="label1_Copy" Foreground="#FFDCDBD1" Content="ایمیل" HorizontalAlignment="Left" VerticalAlignment="Top" Width="90" Height="32" FontSize="20" HorizontalContentAlignment="Center" Margin="4,33,0,0"/>
+            <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Margin="106,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199"/>
+            <Label x:Name="label1_Copy1" Foreground="#FFDCDBD1" Content="کلمه عبور" HorizontalAlignment="Left" VerticalAlignment="Top" Width="90" Height="32" FontSize="20" HorizontalContentAlignment="Center" Margin="4,61,0,0"/>
+            <TextBox x:Name="textBox_Copy1" HorizontalAlignment="Left" Margin="106,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199"/>
+            <Label x:Name="label1_Copy2" Foreground="#FFDCDBD1" Content="تصویر" HorizontalAlignment="Left" VerticalAlignment="Top" Width="90" Height="32" FontSize="20" HorizontalContentAlignment="Center" Margin="10,95,0,0"/>
+            <Image x:Name="image" HorizontalAlignment="Left" Height="146" Margin="179,114,0,0" VerticalAlignment="Top" Width="136" Stretch="Fill" Source="/user_512px.png"/>
+            <Button x:Name="btnEdit" Content="انتخاب تصویر" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top" Background="#FF55657B" BorderBrush="#FFDCDBD1" Foreground="#FFDCDBD1" Width="148" Height="29" FontSize="18" Cursor="Hand"/>
+            <Button x:Name="btnDeleteAccount" Content="حذف" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF730000" BorderBrush="#FFDCDBD1" Foreground="#FFDCDBD1" Width="148" Height="23" FontSize="18" Cursor="Hand" Margin="10,164,0,0"/>
+            <Button x:Name="btnLogout" Content="ویرایش" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFDEC205" BorderBrush="#FFDCDBD1" Foreground="Black" Width="148" Height="22" FontSize="18" Cursor="Hand" Margin="10,192,0,0"/>
+            <Button x:Name="btnJoinSpecial" Content="ثبت" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF258A2F" BorderBrush="#FFDCDBD1" Foreground="#FFDCDBD1" Width="148" Height="23" FontSize="18" Cursor="Hand" Margin="10,219,0,0"/>
+        </Grid>
+        <Grid Background="#FF25252B" Margin="0,10,10,2" Grid.Row="1">
+            <Label x:Name="label1_Copy3" Foreground="#FFDCDBD1" Content="نام کاربری" HorizontalAlignment="Left" VerticalAlignment="Top" Width="90" Height="28" FontSize="14" HorizontalContentAlignment="Center" Margin="4,5,0,0"/>
+            <TextBox x:Name="textBox_Copy2" HorizontalAlignment="Left" Margin="106,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199"/>
+            <Label x:Name="label1_Copy4" Foreground="#FFDCDBD1" Content="ایمیل" HorizontalAlignment="Left" VerticalAlignment="Top" Width="90" Height="23" FontSize="14" HorizontalContentAlignment="Center" Margin="4,33,0,0"/>
+            <TextBox x:Name="textBox_Copy3" HorizontalAlignment="Left" Margin="106,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199"/>
+            <Label x:Name="label1_Copy5" Foreground="#FFDCDBD1" Content="کلمه عبور" HorizontalAlignment="Left" VerticalAlignment="Top" Width="90" Height="28" FontSize="14" HorizontalContentAlignment="Center" Margin="4,61,0,0"/>
+            <TextBox x:Name="textBox_Copy4" HorizontalAlignment="Left" Margin="106,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199"/>
+            <Label x:Name="label1_Copy6" Foreground="#FFDCDBD1" Content="تصویر" HorizontalAlignment="Left" VerticalAlignment="Top" Width="90" Height="32" FontSize="20" HorizontalContentAlignment="Center" Margin="4,137,0,0"/>
+            <Image x:Name="image_Copy" HorizontalAlignment="Left" Height="116" Margin="208,144,0,0" VerticalAlignment="Top" Width="107" Stretch="Fill" Source="/user_512px.png"/>
+            <Button x:Name="btnEdit_Copy" Content="انتخاب تصویر" HorizontalAlignment="Left" Margin="4,174,0,0" VerticalAlignment="Top" Background="#FF55657B" BorderBrush="#FFDCDBD1" Foreground="#FFDCDBD1" Width="148" Height="29" FontSize="18" Cursor="Hand"/>
+            <Button x:Name="btnDeleteAccount_Copy" Content="حذف" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF730000" BorderBrush="#FFDCDBD1" Foreground="#FFDCDBD1" Width="148" Height="23" FontSize="18" Cursor="Hand" Margin="4,208,0,0"/>
+            <Button x:Name="btnLogout_Copy" Content="ویرایش" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFDEC205" BorderBrush="#FFDCDBD1" Foreground="Black" Width="148" Height="22" FontSize="18" Cursor="Hand" Margin="4,236,0,0"/>
+            <Button x:Name="btnJoinSpecial_Copy" Content="ثبت" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF258A2F" BorderBrush="#FFDCDBD1" Foreground="#FFDCDBD1" Width="40" Height="84" FontSize="18" Cursor="Hand" Margin="159,172,0,0"/>
+            <CheckBox x:Name="checkBox" Content="کتاب خاص " HorizontalAlignment="Left" Margin="99,89,0,0" VerticalAlignment="Top" Foreground="#FFD0CACA"/>
+            <Label x:Name="label1_Copy8" Foreground="#FFDCDBD1" Content="تعداد" HorizontalAlignment="Left" VerticalAlignment="Top" Width="43" Height="28" FontSize="14" HorizontalContentAlignment="Center" Margin="10,110,0,0"/>
+            <Label x:Name="label1_Copy9" Foreground="#FFDCDBD1" Content="لایک" HorizontalAlignment="Left" VerticalAlignment="Top" Width="42" Height="28" FontSize="14" HorizontalContentAlignment="Center" Margin="100,110,0,0"/>
+            <Label x:Name="label1_Copy10" Foreground="#FFDCDBD1" Content="امتیاز" HorizontalAlignment="Left" VerticalAlignment="Top" Width="42" Height="28" FontSize="14" HorizontalContentAlignment="Center" Margin="210,111,0,0"/>
+            <TextBox x:Name="textBox_Copy5" HorizontalAlignment="Left" Margin="61,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="32" TextAlignment="Center"/>
+            <TextBox x:Name="textBox_Copy6" HorizontalAlignment="Left" Margin="147,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="32" TextAlignment="Center"/>
+            <TextBox x:Name="textBox_Copy7" HorizontalAlignment="Left" Margin="257,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="32" TextAlignment="Center"/>
+        </Grid>
+        <Grid Background="#FF25252B" Margin="10,0,10,10" Grid.Column="1">
+            <DataGrid x:Name="dataGrid" d:ItemsSource="{d:SampleData ItemCount=3}" Background="#FF25252B"/>
+        </Grid>
+        <Grid Background="#FF25252B" Margin="10,10,10,2" Grid.Column="1" Grid.Row="1">
+            <DataGrid x:Name="dataGrid_Copy1" d:ItemsSource="{d:SampleData ItemCount=3}" Background="#FF25252B" Margin="0,0,0,-2"/>
+        </Grid>
+
+
+
+
+    </Grid>
+</Page>

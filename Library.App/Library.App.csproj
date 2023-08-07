@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="books_512px.png" />
+    <None Remove="close_512px.png" />
+    <None Remove="Control Panel_512px.png" />
+    <None Remove="fire_exit_512px.png" />
+    <None Remove="home-banner.jpg" />
+    <None Remove="home_page_512px.png" />
+    <None Remove="library_512px.png" />
+    <None Remove="minimize_window_512px.png" />
+    <None Remove="Pages\edit_512px.png" />
+    <None Remove="Pages\home-banner.jpg" />
+    <None Remove="Pages\search_512px.png" />
+    <None Remove="refresh_512px.png" />
+    <None Remove="search_512px.png" />
+    <None Remove="user_512px.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="books_512px.png" />
+    <Resource Include="close_512px.png" />
+    <Resource Include="Control Panel_512px.png" />
+    <Resource Include="fire_exit_512px.png" />
+    <Resource Include="home-banner.jpg" />
+    <Resource Include="home_page_512px.png" />
+    <Resource Include="library_512px.png" />
+    <Resource Include="minimize_window_512px.png" />
+    <Resource Include="Pages\edit_512px.png" />
+    <Resource Include="Pages\home-banner.jpg" />
+    <Resource Include="Pages\search_512px.png" />
+    <Resource Include="refresh_512px.png" />
+    <Resource Include="search_512px.png" />
+    <Resource Include="user_512px.png" />
+  </ItemGroup>
+
+</Project>
