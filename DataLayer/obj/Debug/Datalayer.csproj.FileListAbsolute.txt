@@ -1,0 +1,6 @@
+C:\Users\xmehd\OneDrive\Desktop\Work\Library\Datalayer\bin\Debug\Datalayer.dll
+C:\Users\xmehd\OneDrive\Desktop\Work\Library\Datalayer\bin\Debug\Datalayer.pdb
+C:\Users\xmehd\OneDrive\Desktop\Work\Library\Datalayer\obj\Debug\Datalayer.csproj.AssemblyReference.cache
+C:\Users\xmehd\OneDrive\Desktop\Work\Library\Datalayer\obj\Debug\Datalayer.csproj.CoreCompileInputs.cache
+C:\Users\xmehd\OneDrive\Desktop\Work\Library\Datalayer\obj\Debug\Datalayer.dll
+C:\Users\xmehd\OneDrive\Desktop\Work\Library\Datalayer\obj\Debug\Datalayer.pdb
