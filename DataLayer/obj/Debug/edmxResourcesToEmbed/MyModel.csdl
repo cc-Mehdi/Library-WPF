@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Library_DbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Books">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BookName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Count" Type="Int32" Nullable="false" />
+    <Property Name="Likes" Type="Int32" />
+    <Property Name="Scores" Type="Int32" />
+    <Property Name="isSpecial" Type="Boolean" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" />
+    <Property Name="Image" Type="String" MaxLength="200" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="BorrowedBooks" Relationship="Self.FK_BorrowedBooks_Books" FromRole="Books" ToRole="BorrowedBooks" />
+  </EntityType>
+  <EntityType Name="BorrowedBooks">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BookId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" />
+    <Property Name="EndDate" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Books" Relationship="Self.FK_BorrowedBooks_Books" FromRole="BorrowedBooks" ToRole="Books" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_BorrowedBooks_Users" FromRole="BorrowedBooks" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="isSpecial" Type="Boolean" Nullable="false" />
+    <Property Name="Image" Type="String" MaxLength="200" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="BorrowedBooks" Relationship="Self.FK_BorrowedBooks_Users" FromRole="Users" ToRole="BorrowedBooks" />
+  </EntityType>
+  <Association Name="FK_BorrowedBooks_Books">
+    <End Role="Books" Type="Self.Books" Multiplicity="1" />
+    <End Role="BorrowedBooks" Type="Self.BorrowedBooks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Books">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BorrowedBooks">
+        <PropertyRef Name="BookId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BorrowedBooks_Users">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="BorrowedBooks" Type="Self.BorrowedBooks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BorrowedBooks">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Library_DbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Books" EntityType="Self.Books" />
+    <EntitySet Name="BorrowedBooks" EntityType="Self.BorrowedBooks" />
+    <EntitySet Name="Users" EntityType="Self.Users" />
+    <AssociationSet Name="FK_BorrowedBooks_Books" Association="Self.FK_BorrowedBooks_Books">
+      <End Role="Books" EntitySet="Books" />
+      <End Role="BorrowedBooks" EntitySet="BorrowedBooks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BorrowedBooks_Users" Association="Self.FK_BorrowedBooks_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="BorrowedBooks" EntitySet="BorrowedBooks" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

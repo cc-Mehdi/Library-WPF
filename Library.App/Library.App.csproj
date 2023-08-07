@@ -25,6 +25,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Datalayer\Datalayer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="books_512px.png" />
     <Resource Include="close_512px.png" />
     <Resource Include="Control Panel_512px.png" />

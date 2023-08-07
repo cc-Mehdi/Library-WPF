@@ -56,3 +56,9 @@ C:\Users\xmehd\OneDrive\Desktop\Library\Library.App\obj\Debug\net6.0-windows\ref
 C:\Users\xmehd\OneDrive\Desktop\Library\Library.App\obj\Debug\net6.0-windows\Library.App.pdb
 C:\Users\xmehd\OneDrive\Desktop\Library\Library.App\obj\Debug\net6.0-windows\Library.App.genruntimeconfig.cache
 C:\Users\xmehd\OneDrive\Desktop\Library\Library.App\obj\Debug\net6.0-windows\ref\Library.App.dll
+C:\Users\xmehd\OneDrive\Desktop\Work\Library\Library.App\bin\Debug\net6.0-windows\Datalayer.dll
+C:\Users\xmehd\OneDrive\Desktop\Work\Library\Library.App\bin\Debug\net6.0-windows\Datalayer.pdb
+C:\Users\xmehd\OneDrive\Desktop\Work\Library\Library.App\obj\Debug\net6.0-windows\Library.App.csproj.CopyComplete
+C:\Users\xmehd\OneDrive\Desktop\Work\Library\Library.App\bin\Debug\net6.0-windows\EntityFramework.dll
+C:\Users\xmehd\OneDrive\Desktop\Work\Library\Library.App\bin\Debug\net6.0-windows\Datalayer.dll.config
+C:\Users\xmehd\OneDrive\Desktop\Work\Library\Library.App\bin\Debug\net6.0-windows\EntityFramework.xml

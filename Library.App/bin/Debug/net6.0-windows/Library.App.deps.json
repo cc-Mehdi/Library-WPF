@@ -7,8 +7,24 @@
   "targets": {
     ".NETCoreApp,Version=v6.0": {
       "Library.App/1.0.0": {
+        "dependencies": {
+          "Datalayer": "1.0.0"
+        },
         "runtime": {
           "Library.App.dll": {}
+        }
+      },
+      "Datalayer/1.0.0": {
+        "runtime": {
+          "Datalayer.dll": {}
+        }
+      },
+      "EntityFramework/6.0.0.0": {
+        "runtime": {
+          "EntityFramework.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.2.61023.0"
+          }
         }
       }
     }
@@ -16,6 +32,16 @@
   "libraries": {
     "Library.App/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Datalayer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EntityFramework/6.0.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

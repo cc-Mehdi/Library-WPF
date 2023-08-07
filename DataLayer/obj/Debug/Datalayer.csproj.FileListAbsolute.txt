@@ -4,3 +4,9 @@ C:\Users\xmehd\OneDrive\Desktop\Work\Library\Datalayer\obj\Debug\Datalayer.cspro
 C:\Users\xmehd\OneDrive\Desktop\Work\Library\Datalayer\obj\Debug\Datalayer.csproj.CoreCompileInputs.cache
 C:\Users\xmehd\OneDrive\Desktop\Work\Library\Datalayer\obj\Debug\Datalayer.dll
 C:\Users\xmehd\OneDrive\Desktop\Work\Library\Datalayer\obj\Debug\Datalayer.pdb
+C:\Users\xmehd\OneDrive\Desktop\Work\Library\Datalayer\bin\Debug\Datalayer.dll.config
+C:\Users\xmehd\OneDrive\Desktop\Work\Library\Datalayer\bin\Debug\EntityFramework.dll
+C:\Users\xmehd\OneDrive\Desktop\Work\Library\Datalayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\xmehd\OneDrive\Desktop\Work\Library\Datalayer\bin\Debug\EntityFramework.xml
+C:\Users\xmehd\OneDrive\Desktop\Work\Library\Datalayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\xmehd\OneDrive\Desktop\Work\Library\Datalayer\obj\Debug\Datalayer.csproj.CopyComplete

@@ -4,6 +4,21 @@
     "C:\\Users\\xmehd\\OneDrive\\Desktop\\Work\\Library\\Library.App\\Library.App.csproj": {}
   },
   "projects": {
+    "C:\\Users\\xmehd\\OneDrive\\Desktop\\Work\\Library\\Datalayer\\Datalayer.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\xmehd\\OneDrive\\Desktop\\Work\\Library\\Datalayer\\Datalayer.csproj",
+        "projectName": "Datalayer",
+        "projectPath": "C:\\Users\\xmehd\\OneDrive\\Desktop\\Work\\Library\\Datalayer\\Datalayer.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
     "C:\\Users\\xmehd\\OneDrive\\Desktop\\Work\\Library\\Library.App\\Library.App.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -27,7 +42,11 @@
         "frameworks": {
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\xmehd\\OneDrive\\Desktop\\Work\\Library\\Datalayer\\Datalayer.csproj": {
+                "projectPath": "C:\\Users\\xmehd\\OneDrive\\Desktop\\Work\\Library\\Datalayer\\Datalayer.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
