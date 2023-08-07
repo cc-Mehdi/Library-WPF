@@ -80,6 +80,7 @@
     <Compile Include="Repository\IRepository\IUsersRepository.cs" />
     <Compile Include="Repository\Repository.cs" />
     <Compile Include="Repository\BooksRepository.cs" />
+    <Compile Include="Repository\UnitOfWork.cs" />
     <Compile Include="Repository\UsersRepository.cs" />
     <Compile Include="Users.cs">
       <DependentUpon>MyModel.tt</DependentUpon>
