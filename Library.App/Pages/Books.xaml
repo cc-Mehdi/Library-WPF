@@ -81,8 +81,8 @@
                 <ColumnDefinition Width="229*"/>
             </Grid.ColumnDefinitions>
             <Grid Height="NaN" Margin="10,24,219,0"/>
-            <Button x:Name="btnFilter" Content="اعمال فیلتر" HorizontalAlignment="Left" Margin="26,135,0,0" VerticalAlignment="Top" Background="#FF55657B" BorderBrush="#FFDEC205" Foreground="#FFDEC205" Width="222" Height="31" FontSize="22" Grid.ColumnSpan="2" BorderThickness="2,2,2,2" Cursor="Hand"/>
-            <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Margin="26,73,0,0" VerticalAlignment="Top" Width="233" Grid.ColumnSpan="2"/>
+            <Button x:Name="btnFilter" Content="اعمال فیلتر" HorizontalAlignment="Left" Margin="26,135,0,0" VerticalAlignment="Top" Background="#FF55657B" BorderBrush="#FFDEC205" Foreground="#FFDEC205" Width="222" Height="31" FontSize="22" Grid.ColumnSpan="2" BorderThickness="2,2,2,2" Cursor="Hand" Click="btnFilter_Click"/>
+            <ComboBox x:Name="lstCategories" HorizontalAlignment="Left" Margin="26,73,0,0" VerticalAlignment="Top" Width="233" Grid.ColumnSpan="2"/>
         </Grid>
         <Label x:Name="label1_Copy2" Foreground="#FFDCDBD1" Content="دسته بندی های موجود :" HorizontalAlignment="Left" VerticalAlignment="Top" Width="186" Height="32" FontSize="20" HorizontalContentAlignment="Center" Margin="2,25,0,0" Grid.Row="3" Grid.ColumnSpan="2"/>
 
