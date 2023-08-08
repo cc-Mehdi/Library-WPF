@@ -34,18 +34,24 @@ namespace Library.App.Pages
         {
             btnAll.Background = new SolidColorBrush(Color.FromArgb(200, 37, 138, 47));
             btnMoney.Background = btnFree.Background = new SolidColorBrush(Color.FromArgb(200, 85, 101, 123));
+            dgvBooks.ItemsSource = BookList;
+            FixInterference();
         }
 
         private void btnMoney_Click(object sender, RoutedEventArgs e)
         {
             btnMoney.Background = new SolidColorBrush(Color.FromArgb(200, 37, 138, 47));
             btnAll.Background = btnFree.Background = new SolidColorBrush(Color.FromArgb(200, 85, 101, 123));
+            dgvBooks.ItemsSource = BookList.Where(u => u.Price != 0);
+            FixInterference();
         }
 
         private void btnFree_Click(object sender, RoutedEventArgs e)
         {
             btnFree.Background = new SolidColorBrush(Color.FromArgb(200, 37, 138, 47));
             btnAll.Background = btnMoney.Background = new SolidColorBrush(Color.FromArgb(200, 85, 101, 123));
+            dgvBooks.ItemsSource = BookList.Where(u => u.Price == 0);
+            FixInterference();
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -90,13 +96,29 @@ namespace Library.App.Pages
                     dgvBooks.ItemsSource = BookList.OrderBy(u => u.BookName);
                     break;
             }
-            dgvBooks.Columns[0].Visibility = Visibility.Collapsed;
-            dgvBooks.Columns[9].Visibility = Visibility.Visible;
+            FixInterference();
         }
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
             dgvBooks.ItemsSource = BookList.Where(u => u.BookName.Contains(txtSearch.Text) || u.Category.Contains(txtSearch.Text) || u.Date.ToString().Contains(txtSearch.Text));
+            FixInterference();
+        }
+
+        //Fix interference in columns from book data grid
+        private void FixInterference()
+        {
+            if(dgvBooks.Items.Count > 0)
+            {
+                dgvBooks.Columns[0].Visibility = Visibility.Collapsed;
+                dgvBooks.Columns[9].Visibility = Visibility.Visible;
+            }
+        }
+
+        private void btnSpecial_Click(object sender, RoutedEventArgs e)
+        {
+            dgvBooks.ItemsSource = BookList.Where(u => u.isSpecial == true);
+            FixInterference();
         }
     }
 }
