@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
@@ -26,10 +28,12 @@ namespace Library.App.Pages
             BookList = _unitOfWork.Book.GetAll();
             if (BookList != null)
             {
-                //imgOldBook.Source = new BitmapImage(new Uri(@"\images\" + _unitOfWork.Book.GetOldestBook().Image));
-                //imgNewestBook.Source = new BitmapImage(new Uri(@"\images\" + _unitOfWork.Book.GetNewestBook().Image));
-                //imgFavoriteBook.Source = new BitmapImage(new Uri(@"\images\" + _unitOfWork.Book.GetFavoriteBook().Image));
-                //imgBestBook.Source = new BitmapImage(new Uri(@"\images\" + _unitOfWork.Book.GetBestBook().Image));
+                string appRootPath = AppDomain.CurrentDomain.BaseDirectory + @"images\";
+                imgOldBook.Source = new BitmapImage(new Uri((appRootPath + _unitOfWork.Book.GetAll().OrderBy(u => u.Date).Take(1).FirstOrDefault().Image)));
+                imgNewestBook.Source = new BitmapImage(new Uri((appRootPath + _unitOfWork.Book.GetAll().OrderByDescending(u => u.Date).Take(1).FirstOrDefault().Image)));
+                imgFavoriteBook.Source = new BitmapImage(new Uri((appRootPath + _unitOfWork.Book.GetAll().OrderByDescending(u => u.Likes).Take(1).FirstOrDefault().Image)));
+                imgBestBook.Source = new BitmapImage(new Uri((appRootPath + _unitOfWork.Book.GetAll().OrderByDescending(u => u.Scores).Take(1).FirstOrDefault().Image)));
+                btnOldBook.IsEnabled = btnNewestBook.IsEnabled = btnFavoriteBook.IsEnabled = btnBestBook.IsEnabled = true;
             }
         }
     }
