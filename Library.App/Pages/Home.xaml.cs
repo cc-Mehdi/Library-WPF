@@ -29,10 +29,10 @@ namespace Library.App.Pages
             if (BookList != null)
             {
                 string appRootPath = AppDomain.CurrentDomain.BaseDirectory + @"images\";
-                imgOldBook.Source = new BitmapImage(new Uri((appRootPath + _unitOfWork.Book.GetAll().OrderBy(u => u.Date).Take(1).FirstOrDefault().Image)));
-                imgNewestBook.Source = new BitmapImage(new Uri((appRootPath + _unitOfWork.Book.GetAll().OrderByDescending(u => u.Date).Take(1).FirstOrDefault().Image)));
-                imgFavoriteBook.Source = new BitmapImage(new Uri((appRootPath + _unitOfWork.Book.GetAll().OrderByDescending(u => u.Likes).Take(1).FirstOrDefault().Image)));
-                imgBestBook.Source = new BitmapImage(new Uri((appRootPath + _unitOfWork.Book.GetAll().OrderByDescending(u => u.Scores).Take(1).FirstOrDefault().Image)));
+                imgOldBook.Source = new BitmapImage(new Uri((appRootPath + BookList.OrderBy(u => u.Date).Take(1).FirstOrDefault().Image)));
+                imgNewestBook.Source = new BitmapImage(new Uri((appRootPath + BookList.OrderByDescending(u => u.Date).Take(1).FirstOrDefault().Image)));
+                imgFavoriteBook.Source = new BitmapImage(new Uri((appRootPath + BookList.OrderByDescending(u => u.Likes).Take(1).FirstOrDefault().Image)));
+                imgBestBook.Source = new BitmapImage(new Uri((appRootPath + BookList.OrderByDescending(u => u.Scores).Take(1).FirstOrDefault().Image)));
                 btnOldBook.IsEnabled = btnNewestBook.IsEnabled = btnFavoriteBook.IsEnabled = btnBestBook.IsEnabled = true;
             }
         }
