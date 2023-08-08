@@ -64,7 +64,7 @@ namespace Library.App
         private void btnBooks_MouseDown(object sender, MouseButtonEventArgs e)
         {
             //Send Books Page to panel from main layout
-            booksPage = new Pages.Books();
+            booksPage = new Pages.Books(_unitOfWork);
             frame.Content = booksPage;
         }
 
