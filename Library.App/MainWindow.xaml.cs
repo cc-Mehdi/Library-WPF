@@ -115,7 +115,7 @@ namespace Library.App
         private void btnAdmin_MouseDown(object sender, MouseButtonEventArgs e)
         {
             //Send Admin Page to panel from main layout
-            adminPage = new Pages.Admin();
+            adminPage = new Pages.Admin(_unitOfWork);
             frame.Content = adminPage;
         }
     }
