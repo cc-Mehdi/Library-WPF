@@ -1,17 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using Datalayer.Repository.IRepository;
 
 namespace Library.App.Pages
 {
@@ -20,9 +12,25 @@ namespace Library.App.Pages
     /// </summary>
     public partial class Home : Page
     {
-        public Home()
+        private readonly IUnitOfWork _unitOfWork;
+        public IEnumerable<Datalayer.Books> BookList { get; set; }
+
+        public Home(IUnitOfWork unitOfWork)
         {
             InitializeComponent();
+            _unitOfWork = unitOfWork;
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            BookList = _unitOfWork.Book.GetAll();
+            if (BookList != null)
+            {
+                //imgOldBook.Source = new BitmapImage(new Uri(@"\images\" + _unitOfWork.Book.GetOldestBook().Image));
+                //imgNewestBook.Source = new BitmapImage(new Uri(@"\images\" + _unitOfWork.Book.GetNewestBook().Image));
+                //imgFavoriteBook.Source = new BitmapImage(new Uri(@"\images\" + _unitOfWork.Book.GetFavoriteBook().Image));
+                //imgBestBook.Source = new BitmapImage(new Uri(@"\images\" + _unitOfWork.Book.GetBestBook().Image));
+            }
         }
     }
 }

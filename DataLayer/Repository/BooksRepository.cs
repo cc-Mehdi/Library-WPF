@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Datalayer.Repository
 {
-    public class BooksRepository : Repository<Users>, IBooksRepository
+    public class BooksRepository : Repository<Books>, IBooksRepository
     {
         private readonly Library_DbEntities _db;
         public BooksRepository(Library_DbEntities db) : base(db)

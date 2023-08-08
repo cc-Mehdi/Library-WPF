@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="541" d:DesignWidth="820"
       Title="Home"
-      FontFamily="Times New Roman" FontSize="18">
+      FontFamily="Times New Roman" FontSize="18" Loaded="Page_Loaded">
 
     <Grid FlowDirection="RightToLeft">
         <Grid.RowDefinitions>
@@ -39,25 +39,25 @@
             <TextBlock x:Name="textBlock" TextWrapping="Wrap" Height="166" Width="189" TextAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="36" Margin="9,39,0,0" Foreground="#FF25252B" FontWeight="Bold"><Run FlowDirection="RightToLeft" Language="fa-ir" Text="از 30 تا 70 درصد تخفیف ویژه در آخر هفته"/><LineBreak/><Run FlowDirection="RightToLeft" Language="fa-ir"/></TextBlock>
         </Label>
         <Grid Grid.Column="3" Grid.Row="2" Margin="14,28,14,10" Grid.RowSpan="2" Background="#FF25252B">
-            <Label x:Name="label1_Copy9" Foreground="#FFDEC205" Content="قدیمی ترین کتاب" HorizontalAlignment="Left" VerticalAlignment="Top" Width="179" Height="30" FontSize="20" Grid.Column="2" HorizontalContentAlignment="Center"/>
-            <Button x:Name="button1" Content="مشاهده کتاب" Width="131" Background="#FF55657B" BorderBrush="White" FontSize="16" Foreground="#FF25252B" FontWeight="Bold" Cursor="Hand" Margin="23,196,23,6"/>
+            <Label x:Name="lblOldBook" Foreground="#FFDEC205" Content="قدیمی ترین کتاب" HorizontalAlignment="Left" VerticalAlignment="Top" Width="179" Height="30" FontSize="20" Grid.Column="2" HorizontalContentAlignment="Center"/>
+            <Button x:Name="btnOldBook" IsEnabled="False" Content="مشاهده کتاب" Width="131" Background="#FF55657B" BorderBrush="White" FontSize="16" Foreground="#FF25252B" FontWeight="Bold" Cursor="Hand" Margin="23,196,23,6"/>
         </Grid>
-        <Image x:Name="image_Copy" HorizontalAlignment="Center" Height="150" VerticalAlignment="Top" Width="142" Source="/Pages/home-banner.jpg" Stretch="Fill" Margin="0,66,0,0" Grid.Row="2" Grid.Column="3" Grid.RowSpan="2"/>
+        <Image x:Name="imgOldBook" HorizontalAlignment="Center" Height="150" VerticalAlignment="Top" Width="142" Source="/Pages/home-banner.jpg" Stretch="Fill" Margin="0,66,0,0" Grid.Row="2" Grid.Column="3" Grid.RowSpan="2"/>
         <Grid Grid.Column="2" Grid.Row="2" Margin="14,28,14,10" Grid.RowSpan="2" Background="#FF25252B">
-            <Label x:Name="label1_Copy1" Foreground="#FFDEC205" Content="جدید ترین کتاب" HorizontalAlignment="Left" VerticalAlignment="Top" Width="179" Height="30" FontSize="20" Grid.Column="2" HorizontalContentAlignment="Center"/>
-            <Button x:Name="button2" Content="مشاهده کتاب" Width="131" Background="#FF55657B" BorderBrush="White" FontSize="16" Foreground="#FF25252B" FontWeight="Bold" Cursor="Hand" Margin="23,196,23,6"/>
+            <Label x:Name="lblNewestBook" Foreground="#FFDEC205" Content="جدید ترین کتاب" HorizontalAlignment="Left" VerticalAlignment="Top" Width="179" Height="30" FontSize="20" Grid.Column="2" HorizontalContentAlignment="Center"/>
+            <Button x:Name="btnNewestBook" IsEnabled="False" Content="مشاهده کتاب" Width="131" Background="#FF55657B" BorderBrush="White" FontSize="16" Foreground="#FF25252B" FontWeight="Bold" Cursor="Hand" Margin="23,196,23,6"/>
         </Grid>
-        <Image x:Name="image_Copy1" HorizontalAlignment="Center" Height="150" VerticalAlignment="Top" Width="142" Source="/Pages/home-banner.jpg" Stretch="Fill" Margin="0,66,0,0" Grid.Row="2" Grid.Column="2" Grid.RowSpan="2"/>
+        <Image x:Name="imgNewestBook" HorizontalAlignment="Center" Height="150" VerticalAlignment="Top" Width="142" Source="/Pages/home-banner.jpg" Stretch="Fill" Margin="0,66,0,0" Grid.Row="2" Grid.Column="2" Grid.RowSpan="2"/>
         <Grid Grid.Column="1" Grid.Row="2" Margin="14,28,14,10" Grid.RowSpan="2" Background="#FF25252B">
-            <Label x:Name="label1_Copy2" Foreground="#FFDEC205" Content="محبوب ترین کتاب" HorizontalAlignment="Left" VerticalAlignment="Top" Width="179" Height="30" FontSize="20" Grid.Column="2" HorizontalContentAlignment="Center"/>
-            <Button x:Name="button3" Content="مشاهده کتاب" Width="131" Background="#FF55657B" BorderBrush="White" FontSize="16" Foreground="#FF25252B" FontWeight="Bold" Cursor="Hand" Margin="23,196,23,6"/>
+            <Label x:Name="lblFavoriteBook" Foreground="#FFDEC205" Content="محبوب ترین کتاب" HorizontalAlignment="Left" VerticalAlignment="Top" Width="179" Height="30" FontSize="20" Grid.Column="2" HorizontalContentAlignment="Center"/>
+            <Button x:Name="btnFavoriteBook" IsEnabled="False" Content="مشاهده کتاب" Width="131" Background="#FF55657B" BorderBrush="White" FontSize="16" Foreground="#FF25252B" FontWeight="Bold" Cursor="Hand" Margin="23,196,23,6"/>
         </Grid>
-        <Image x:Name="image_Copy2" HorizontalAlignment="Center" Height="150" VerticalAlignment="Top" Width="142" Source="/Pages/home-banner.jpg" Stretch="Fill" Margin="0,66,0,0" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2"/>
+        <Image x:Name="imgFavoriteBook" HorizontalAlignment="Center" Height="150" VerticalAlignment="Top" Width="142" Source="/Pages/home-banner.jpg" Stretch="Fill" Margin="0,66,0,0" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2"/>
         <Grid Grid.Row="2" Margin="14,28,14,10" Grid.RowSpan="2" Background="#FF25252B">
-            <Label x:Name="label1_Copy3" Foreground="#FFDEC205" Content="برگزیده ترین کتاب" HorizontalAlignment="Left" VerticalAlignment="Top" Width="179" Height="30" FontSize="20" Grid.Column="2" HorizontalContentAlignment="Center"/>
-            <Button x:Name="button4" Content="مشاهده کتاب" Width="131" Background="#FF55657B" BorderBrush="White" FontSize="16" Foreground="#FF25252B" FontWeight="Bold" Cursor="Hand" Margin="23,196,23,6"/>
+            <Label x:Name="lblBestBook" Foreground="#FFDEC205" Content="برگزیده ترین کتاب" HorizontalAlignment="Left" VerticalAlignment="Top" Width="179" Height="30" FontSize="20" Grid.Column="2" HorizontalContentAlignment="Center"/>
+            <Button x:Name="btnBestBook" IsEnabled="False" Content="مشاهده کتاب" Width="131" Background="#FF55657B" BorderBrush="White" FontSize="16" Foreground="#FF25252B" FontWeight="Bold" Cursor="Hand" Margin="23,196,23,6"/>
         </Grid>
-        <Image x:Name="image_Copy3" HorizontalAlignment="Center" Height="150" VerticalAlignment="Top" Width="142" Source="/Pages/home-banner.jpg" Stretch="Fill" Margin="0,66,0,0" Grid.Row="2" Grid.RowSpan="2"/>
+        <Image x:Name="imgBestBook" HorizontalAlignment="Center" Height="150" VerticalAlignment="Top" Width="142" Source="/Pages/home-banner.jpg" Stretch="Fill" Margin="0,66,0,0" Grid.Row="2" Grid.RowSpan="2"/>
 
 
     </Grid>

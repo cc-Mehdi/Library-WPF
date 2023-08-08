@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using Datalayer.Repository.IRepository;
+using System.Windows;
 using System.Windows.Input;
 
 namespace Library.App
@@ -8,6 +9,7 @@ namespace Library.App
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly IUnitOfWork _unitOfWork;
         Pages.Home homePage;
         Pages.Books booksPage;
         Pages.Profile profilePage;
@@ -15,15 +17,20 @@ namespace Library.App
 
         bool isMouseDown = false;
 
-        public MainWindow()
+        public MainWindow(IUnitOfWork unitOfWork)
         {
             InitializeComponent();
+            _unitOfWork = unitOfWork;
+        }
+
+        public MainWindow()
+        {
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             //Send Home Page to panel from main layout
-            homePage = new Pages.Home();
+            homePage = new Pages.Home(_unitOfWork);
             frame.Content = homePage;
         }
 

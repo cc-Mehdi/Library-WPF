@@ -45,4 +45,8 @@
     <Resource Include="user_512px.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="images\" />
+  </ItemGroup>
+
 </Project>
