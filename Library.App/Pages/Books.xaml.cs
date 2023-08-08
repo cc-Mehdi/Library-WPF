@@ -93,5 +93,10 @@ namespace Library.App.Pages
             dgvBooks.Columns[0].Visibility = Visibility.Collapsed;
             dgvBooks.Columns[9].Visibility = Visibility.Visible;
         }
+
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            dgvBooks.ItemsSource = BookList.Where(u => u.BookName.Contains(txtSearch.Text) || u.Category.Contains(txtSearch.Text) || u.Date.ToString().Contains(txtSearch.Text));
+        }
     }
 }

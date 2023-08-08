@@ -39,7 +39,7 @@
             </ComboBox>
         </Grid>
         <TextBox x:Name="txtSearch" Margin="24,7,114,57" TextWrapping="Wrap" Height="26" Grid.ColumnSpan="3"/>
-        <Button x:Name="button" Width="26" Height="26" HorizontalAlignment="Left" Margin="25,16,0,0" VerticalAlignment="Top" Cursor="Hand" Grid.Column="2">
+        <Button x:Name="btnSearch" Width="26" Height="26" HorizontalAlignment="Left" Margin="25,16,0,0" VerticalAlignment="Top" Cursor="Hand" Grid.Column="2" Click="btnSearch_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/Pages/search_512px.png"/>
             </Button.Background>
