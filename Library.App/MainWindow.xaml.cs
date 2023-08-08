@@ -53,7 +53,6 @@ namespace Library.App
 
         private void btnRefresh_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            homePage.txtSearch.Text = "";
         }
 
         private void btnHome_MouseDown(object sender, MouseButtonEventArgs e)
@@ -66,6 +65,11 @@ namespace Library.App
         {
             //Send Books Page to panel from main layout
             booksPage = new Pages.Books();
+            frame.Content = booksPage;
+        }
+
+        public void openBooks()
+        {
             frame.Content = booksPage;
         }
 

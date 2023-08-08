@@ -23,20 +23,8 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Image x:Name="image" HorizontalAlignment="Left" Height="284" VerticalAlignment="Top" Width="820" Grid.ColumnSpan="4" Grid.RowSpan="3" Source="/Pages/home-banner.jpg" Stretch="Fill"/>
-        <GroupBox x:Name="groupBox" Grid.ColumnSpan="2" Margin="0,60,36,68" Grid.RowSpan="2" Height="143" Width="374" Background="#BD55657B" Grid.Column="2">
-            <Grid>
-                <TextBox x:Name="txtSearch" Margin="10,-63,10,0" TextWrapping="Wrap" Height="26"/>
-                <Button x:Name="button" Width="26" Height="26" HorizontalAlignment="Left" Margin="326,24,0,0" VerticalAlignment="Top" Cursor="Hand">
-                    <Button.Background>
-                        <ImageBrush ImageSource="/Pages/search_512px.png"/>
-                    </Button.Background>
-                </Button>
-
-            </Grid>
-        </GroupBox>
-        <Label x:Name="label1_Copy17" Foreground="#FFDCDBD1" Content="جستجوی کتاب ، نویسنده ، ناشر" HorizontalAlignment="Left" VerticalAlignment="Top" Width="374" Height="48" Margin="10,132,0,0" FontSize="32" Grid.Column="2" HorizontalContentAlignment="Center" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
         <Label x:Name="label_Copy6" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.111,0.019" Height="252" Width="224" Margin="84,18,0,0" Background="#A8DEC205" Grid.ColumnSpan="2" Grid.RowSpan="2" >
-            <TextBlock x:Name="textBlock" TextWrapping="Wrap" Height="166" Width="189" TextAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="36" Margin="9,39,0,0" Foreground="#FF25252B" FontWeight="Bold"><Run FlowDirection="RightToLeft" Language="fa-ir" Text="از 30 تا 70 درصد تخفیف ویژه در آخر هفته"/><LineBreak/><Run FlowDirection="RightToLeft" Language="fa-ir"/></TextBlock>
+            <TextBlock x:Name="textBlock" TextWrapping="Wrap" Height="166" Width="189" TextAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="36" Margin="9,39,0,0" Foreground="#FF25252B" FontWeight="Bold"><Run FlowDirection="RightToLeft" Text=" 30 تا 70 درصد تخفیف ویژه در آخر هفته"/><LineBreak/><Run FlowDirection="RightToLeft"/></TextBlock>
         </Label>
         <Grid Grid.Column="3" Grid.Row="2" Margin="14,28,14,10" Grid.RowSpan="2" Background="#FF25252B">
             <Label x:Name="lblOldBook" Foreground="#FFDEC205" Content="قدیمی ترین کتاب" HorizontalAlignment="Left" VerticalAlignment="Top" Width="179" Height="30" FontSize="20" Grid.Column="2" HorizontalContentAlignment="Center"/>
@@ -58,6 +46,7 @@
             <Button x:Name="btnBestBook" IsEnabled="False" Content="مشاهده کتاب" Width="131" Background="#FF55657B" BorderBrush="White" FontSize="16" Foreground="#FF25252B" FontWeight="Bold" Cursor="Hand" Margin="23,196,23,6"/>
         </Grid>
         <Image x:Name="imgBestBook" HorizontalAlignment="Center" Height="150" VerticalAlignment="Top" Width="142" Source="/Pages/home-banner.jpg" Stretch="Fill" Margin="0,66,0,0" Grid.Row="2" Grid.RowSpan="2"/>
+        <Image x:Name="imgOldBook_Copy" HorizontalAlignment="Left" Height="195" VerticalAlignment="Top" Width="425" Source="/Pages/banner-image.jpg" Stretch="Fill" Margin="158,34,0,0" Grid.ColumnSpan="3" Grid.RowSpan="2" Grid.Column="1"/>
 
 
     </Grid>
