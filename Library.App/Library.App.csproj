@@ -17,6 +17,7 @@
     <None Remove="library_512px.png" />
     <None Remove="minimize_window_512px.png" />
     <None Remove="Pages\banner-image.jpg" />
+    <None Remove="Pages\DefaultBookPic.png" />
     <None Remove="Pages\edit_512px.png" />
     <None Remove="Pages\home-banner.jpg" />
     <None Remove="Pages\search_512px.png" />
@@ -39,6 +40,7 @@
     <Resource Include="library_512px.png" />
     <Resource Include="minimize_window_512px.png" />
     <Resource Include="Pages\banner-image.jpg" />
+    <Resource Include="Pages\DefaultBookPic.png" />
     <Resource Include="Pages\edit_512px.png" />
     <Resource Include="Pages\home-banner.jpg" />
     <Resource Include="Pages\search_512px.png" />

@@ -1,7 +1,10 @@
 ﻿using Datalayer.Repository.IRepository;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -12,7 +15,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Library.App.Pages
 {
@@ -24,6 +26,8 @@ namespace Library.App.Pages
         private readonly IUnitOfWork _unitOfWork;
         public IEnumerable<Datalayer.Books> BookList { get; set; }
         public IEnumerable<Datalayer.Users> UserList { get; set; }
+
+        OpenFileDialog openFileUser, openFileBook;
         public Admin(IUnitOfWork unitOfWork)
         {
             InitializeComponent();
@@ -69,6 +73,63 @@ namespace Library.App.Pages
                 dgvBooks.Columns[9].Visibility = Visibility.Collapsed;
                 dgvBooks.Columns[10].Visibility = Visibility.Collapsed;
             }
+        }
+
+        private void btnSelectUserImage_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Filter = "Image files(*.png; *.jpeg)| *.png; *.jpeg | All files(*.*) | *.* ";
+            if (openFile.ShowDialog() == true)
+                imgUser.Source = new BitmapImage(new Uri(openFile.FileName));
+            openFileUser = openFile;
+        }
+
+        private void btnSelectBookImage_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            openFile.Filter = "Image files(*.png; *.jpeg)| *.png; *.jpeg | All files(*.*) | *.* ";
+            if (openFile.ShowDialog() == true)
+                imgBook.Source = new BitmapImage(new Uri(openFile.FileName));
+            openFileBook = openFile;
+        }
+
+        private void btnAddUser_Click(object sender, RoutedEventArgs e)
+        {
+            if(txtUserName.Text != "" && txtEmail.Text != "" && txtPassword.Text != "")
+            {
+                if(openFileUser.FileName != "")
+                {
+                    //create new uniq name
+                    string imageName_new = Guid.NewGuid().ToString();
+                    //get images save directory
+                    var appRootPath = AppDomain.CurrentDomain.BaseDirectory;
+                    //get image extension
+                    var extension = Path.GetExtension(imgUser.Source.ToString());
+                    //get complete image path for save
+                    string fullImagePath = @"images\" + imageName_new + extension;
+
+                    File.Copy(openFileUser.FileName, AppDomain.CurrentDomain.BaseDirectory + fullImagePath);
+
+                    Datalayer.Users newUser = new Datalayer.Users()
+                    {
+                        UserName = txtUserName.Text,
+                        Email = txtEmail.Text,
+                        Password = txtPassword.Text,
+                        isSpecial = false,
+                        Image = fullImagePath
+                    };
+
+                    _unitOfWork.User.Add(newUser);
+                    _unitOfWork.Save();
+
+                    dgvUsers.ItemsSource = _unitOfWork.User.GetAll();
+                    MessageBox.Show("عملیات با موفقیت انجام شد", "موفق", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                }
+                else
+                    MessageBox.Show("لطفا یک تصویر انتخاب کنید", "خطا", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+                MessageBox.Show("لطفا فیلدها را پر کنید", "خطا", MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }
 }
