@@ -26,9 +26,9 @@ namespace Library.App.Pages
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             BookList = _unitOfWork.Book.GetAll();
-            if (BookList != null)
+            if (BookList.Count() != 0)
             {
-                string appRootPath = AppDomain.CurrentDomain.BaseDirectory + @"images\";
+                string appRootPath = AppDomain.CurrentDomain.BaseDirectory;
                 imgOldBook.Source = new BitmapImage(new Uri((appRootPath + BookList.OrderBy(u => u.Date).Take(1).FirstOrDefault().Image)));
                 imgNewestBook.Source = new BitmapImage(new Uri((appRootPath + BookList.OrderByDescending(u => u.Date).Take(1).FirstOrDefault().Image)));
                 imgFavoriteBook.Source = new BitmapImage(new Uri((appRootPath + BookList.OrderByDescending(u => u.Likes).Take(1).FirstOrDefault().Image)));

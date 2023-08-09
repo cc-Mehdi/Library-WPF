@@ -2,6 +2,7 @@
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Security.Policy;
@@ -26,6 +27,11 @@ namespace Library.App.Pages
         private readonly IUnitOfWork _unitOfWork;
         public IEnumerable<Datalayer.Books> BookList { get; set; }
         public IEnumerable<Datalayer.Users> UserList { get; set; }
+        public Datalayer.Books Book { get; set; }
+        public Datalayer.Users User { get; set; }
+
+        //get images save directory
+        string appRootPath = AppDomain.CurrentDomain.BaseDirectory;
 
         OpenFileDialog openFileUser, openFileBook;
         public Admin(IUnitOfWork unitOfWork)
@@ -114,34 +120,39 @@ namespace Library.App.Pages
 
         private void btnAddBook_Click(object sender, RoutedEventArgs e)
         {
-            if (txtBookName.Text != "" && txtCategory.Text != "" && txtPrice.Text != "" && int.Parse(txtCount.Text) < 1)
+            if (txtBookName.Text != "" && txtCategory.Text != "" && txtPrice.Text != "" && int.Parse(txtCount.Text) > 0)
             {
-                if (openFileUser.FileName != "")
+                if (openFileBook.FileName != "")
                 {
                     //create new uniq name
                     string imageName_new = Guid.NewGuid().ToString();
-                    //get images save directory
-                    var appRootPath = AppDomain.CurrentDomain.BaseDirectory;
                     //get image extension
                     var extension = Path.GetExtension(imgUser.Source.ToString());
                     //get complete image path for save
                     string fullImagePath = @"images\" + imageName_new + extension;
 
-                    File.Copy(openFileUser.FileName, AppDomain.CurrentDomain.BaseDirectory + fullImagePath);
+                    File.Copy(openFileBook.FileName, AppDomain.CurrentDomain.BaseDirectory + fullImagePath);
 
-                    Datalayer.Users newUser = new Datalayer.Users()
+                    PersianCalendar pc = new PersianCalendar();
+                    string persianDateNow = $"{pc.GetYear(DateTime.Now)}/{pc.GetMonth(DateTime.Now)}/{pc.GetDayOfMonth(DateTime.Now)}";
+
+                    Datalayer.Books newBook = new Datalayer.Books()
                     {
-                        UserName = txtUserName.Text,
-                        Email = txtEmail.Text,
-                        Password = txtPassword.Text,
-                        isSpecial = false,
+                        BookName = txtBookName.Text,
+                        Category = txtCategory.Text,
+                        Price = Convert.ToDecimal(txtPrice.Text),
+                        isSpecial = (bool)cbIsSpecial.IsChecked,
+                        Count = Convert.ToInt32(txtCount.Text),
+                        Likes = Convert.ToInt32(txtLikes.Text),
+                        Scores = Convert.ToInt32(txtScores.Text),
+                        Date = Convert.ToDateTime(persianDateNow),
                         Image = fullImagePath
                     };
 
-                    _unitOfWork.User.Add(newUser);
+                    _unitOfWork.Book.Add(newBook);
                     _unitOfWork.Save();
 
-                    dgvUsers.ItemsSource = _unitOfWork.User.GetAll();
+                    dgvBooks.ItemsSource = _unitOfWork.Book.GetAll();
                     MessageBox.Show("عملیات با موفقیت انجام شد", "موفق", MessageBoxButton.OK, MessageBoxImage.Asterisk);
                 }
                 else
@@ -161,6 +172,49 @@ namespace Library.App.Pages
         {
             if (txtScores.Text != "")
                 checkjustNumber(txtScores);
+        }
+
+        private void txtPrice_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txtPrice.Text != "")
+                checkjustNumber(txtPrice);
+        }
+
+        private void btnDeleteUser_Click(object sender, RoutedEventArgs e)
+        {
+            if (User != null)
+            {
+                if(MessageBox.Show($"آیا از حذف کاربر {User.UserName} مطمعن هستید ؟", "توجه", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+                {
+                    _unitOfWork.User.Remove(User);
+                    _unitOfWork.Save();
+                    dgvUsers.ItemsSource = UserList = _unitOfWork.User.GetAll();
+                    MessageBox.Show("عملیات با موفقیت انجام شد", "موفق", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+                    txtUserName.Text = txtEmail.Text = txtPassword.Text = "";
+                    imgUser.Source = null;
+                }
+            }
+        }
+
+
+        private void txtUserCode_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txtUserCode.Text != "")
+                checkjustNumber(txtUserCode);
+            if (txtUserCode.Text != "")
+                User = UserList.FirstOrDefault(u=> u.Id == Convert.ToInt32(txtUserCode.Text));
+            if(User != null)
+            {
+                txtUserName.Text = User.UserName;
+                txtEmail.Text = User.Email;
+                txtPassword.Text = User.Password;
+                imgUser.Source = new BitmapImage(new Uri(appRootPath + User.Image));
+            }
+            else
+            {
+                txtUserName.Text = txtEmail.Text = txtPassword.Text = "";
+                imgUser.Source = null;
+            }
         }
 
         private void btnAddUser_Click(object sender, RoutedEventArgs e)

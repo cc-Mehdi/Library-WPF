@@ -29,9 +29,10 @@
             <Label x:Name="label1_Copy2" Foreground="#FFDCDBD1" Content="تصویر" HorizontalAlignment="Left" VerticalAlignment="Top" Width="90" Height="32" FontSize="20" HorizontalContentAlignment="Center" Margin="10,95,0,0"/>
             <Image x:Name="imgUser" HorizontalAlignment="Left" Height="146" Margin="179,114,0,0" VerticalAlignment="Top" Width="136" Stretch="Fill" Source="/user_512px.png"/>
             <Button x:Name="btnSelectUserImage" Content="انتخاب تصویر" HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top" Background="#FF55657B" BorderBrush="#FFDCDBD1" Foreground="#FFDCDBD1" Width="148" Height="29" FontSize="18" Cursor="Hand" Click="btnSelectUserImage_Click"/>
-            <Button x:Name="btnDeleteUser" Content="حذف" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF730000" BorderBrush="#FFDCDBD1" Foreground="#FFDCDBD1" Width="148" Height="23" FontSize="18" Cursor="Hand" Margin="10,164,0,0"/>
-            <Button x:Name="btnEditUser" Content="ویرایش" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFDEC205" BorderBrush="#FFDCDBD1" Foreground="Black" Width="148" Height="22" FontSize="18" Cursor="Hand" Margin="10,192,0,0"/>
+            <Button x:Name="btnDeleteUser" Content="حذف" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF730000" BorderBrush="#FFDCDBD1" Foreground="#FFDCDBD1" Width="113" Height="23" FontSize="18" Cursor="Hand" Margin="10,164,0,0" Click="btnDeleteUser_Click"/>
+            <Button x:Name="btnEditUser" Content="ویرایش" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFDEC205" BorderBrush="#FFDCDBD1" Foreground="Black" Width="113" Height="22" FontSize="18" Cursor="Hand" Margin="10,192,0,0"/>
             <Button x:Name="btnAddUser" Content="ثبت" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF258A2F" BorderBrush="#FFDCDBD1" Foreground="#FFDCDBD1" Width="148" Height="23" FontSize="18" Cursor="Hand" Margin="10,219,0,0" Click="btnAddUser_Click"/>
+            <Label x:Name="label1_Copy11" Foreground="#FFDCDBD1" Content="کد :" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Height="28" FontSize="14" HorizontalContentAlignment="Center" Margin="128,159,0,0"/>
         </Grid>
         <Grid Background="#FF25252B" Margin="0,10,10,2" Grid.Row="1">
             <Label x:Name="label1_Copy3" Foreground="#FFDCDBD1" Content="نام کتاب" HorizontalAlignment="Left" VerticalAlignment="Top" Width="90" Height="28" FontSize="14" HorizontalContentAlignment="Center" Margin="4,5,0,0"/>
@@ -39,20 +40,38 @@
             <Label x:Name="label1_Copy4" Foreground="#FFDCDBD1" Content="دسته بندی" HorizontalAlignment="Left" VerticalAlignment="Top" Width="90" Height="23" FontSize="14" HorizontalContentAlignment="Center" Margin="4,33,0,0"/>
             <TextBox x:Name="txtCategory" HorizontalAlignment="Left" Margin="106,33,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199"/>
             <Label x:Name="label1_Copy5" Foreground="#FFDCDBD1" Content="قیمت" HorizontalAlignment="Left" VerticalAlignment="Top" Width="90" Height="28" FontSize="14" HorizontalContentAlignment="Center" Margin="4,61,0,0"/>
-            <TextBox x:Name="txtPrice" HorizontalAlignment="Left" Margin="106,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199"/>
+            <TextBox x:Name="txtPrice" HorizontalAlignment="Left" Margin="106,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" TextChanged="txtPrice_TextChanged"/>
             <Label x:Name="label1_Copy6" Foreground="#FFDCDBD1" Content="تصویر" HorizontalAlignment="Left" VerticalAlignment="Top" Width="90" Height="32" FontSize="20" HorizontalContentAlignment="Center" Margin="4,137,0,0"/>
             <Image x:Name="imgBook" HorizontalAlignment="Left" Height="116" Margin="208,144,0,0" VerticalAlignment="Top" Width="107" Stretch="Fill" Source="/Pages/DefaultBookPic.png"/>
             <Button x:Name="btnSelectBookImage" Content="انتخاب تصویر" HorizontalAlignment="Left" Margin="4,174,0,0" VerticalAlignment="Top" Background="#FF55657B" BorderBrush="#FFDCDBD1" Foreground="#FFDCDBD1" Width="148" Height="29" FontSize="18" Cursor="Hand" Click="btnSelectBookImage_Click"/>
             <Button x:Name="btnDeleteBook" Content="حذف" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF730000" BorderBrush="#FFDCDBD1" Foreground="#FFDCDBD1" Width="148" Height="23" FontSize="18" Cursor="Hand" Margin="4,208,0,0"/>
             <Button x:Name="btnEditBook" Content="ویرایش" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFDEC205" BorderBrush="#FFDCDBD1" Foreground="Black" Width="148" Height="22" FontSize="18" Cursor="Hand" Margin="4,236,0,0"/>
             <Button x:Name="btnAddBook" Content="ثبت" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF258A2F" BorderBrush="#FFDCDBD1" Foreground="#FFDCDBD1" Width="40" Height="84" FontSize="18" Cursor="Hand" Margin="159,172,0,0" Click="btnAddBook_Click"/>
-            <CheckBox x:Name="cbIsSpecial" Content="کتاب خاص " HorizontalAlignment="Left" Margin="99,89,0,0" VerticalAlignment="Top" Foreground="#FFD0CACA"/>
+            <CheckBox x:Name="cbIsSpecial" Content="کتاب خاص " HorizontalAlignment="Left" Margin="105,91,0,0" VerticalAlignment="Top" Foreground="#FFD0CACA" RenderTransformOrigin="0.5,0.5" IsChecked="False">
+                <CheckBox.LayoutTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </CheckBox.LayoutTransform>
+                <CheckBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </CheckBox.RenderTransform>
+            </CheckBox>
             <Label x:Name="label1_Copy8" Foreground="#FFDCDBD1" Content="تعداد" HorizontalAlignment="Left" VerticalAlignment="Top" Width="43" Height="28" FontSize="14" HorizontalContentAlignment="Center" Margin="10,110,0,0"/>
             <Label x:Name="label1_Copy9" Foreground="#FFDCDBD1" Content="لایک" HorizontalAlignment="Left" VerticalAlignment="Top" Width="42" Height="28" FontSize="14" HorizontalContentAlignment="Center" Margin="100,110,0,0"/>
             <Label x:Name="label1_Copy10" Foreground="#FFDCDBD1" Content="امتیاز" HorizontalAlignment="Left" VerticalAlignment="Top" Width="42" Height="28" FontSize="14" HorizontalContentAlignment="Center" Margin="210,111,0,0"/>
-            <TextBox x:Name="txtCount" HorizontalAlignment="Left" Margin="49,114,0,0" TextWrapping="WrapWithOverflow" VerticalAlignment="Top" Width="46" TextAlignment="Center" TextChanged="txtCount_TextChanged"/>
+            <TextBox x:Name="txtCount" HorizontalAlignment="Left" Margin="49,114,0,0" TextWrapping="WrapWithOverflow" VerticalAlignment="Top" Width="46" TextAlignment="Center" TextChanged="txtCount_TextChanged" Text="1"/>
             <TextBox x:Name="txtLikes" HorizontalAlignment="Left" Margin="147,113,0,0" TextWrapping="WrapWithOverflow" VerticalAlignment="Top" Width="52" TextAlignment="Center" TextChanged="txtLikes_TextChanged"/>
             <TextBox x:Name="txtScores" HorizontalAlignment="Left" Margin="257,114,0,0" TextWrapping="WrapWithOverflow" VerticalAlignment="Top" Width="48" TextAlignment="Center" TextChanged="txtScores_TextChanged"/>
+            <TextBox x:Name="txtUserCode" HorizontalAlignment="Left" Margin="133,-91,0,0" TextWrapping="WrapWithOverflow" VerticalAlignment="Top" Width="46" TextAlignment="Center" TextChanged="txtUserCode_TextChanged"/>
         </Grid>
         <Grid Background="#FF25252B" Margin="10,0,10,10" Grid.Column="1">
             <DataGrid x:Name="dgvUsers" IsReadOnly="True" RenderTransformOrigin="0.5,0.5" IsSynchronizedWithCurrentItem="False" AutoGeneratedColumns="dgvUsers_AutoGeneratedColumns" Background="#FF25252B">
