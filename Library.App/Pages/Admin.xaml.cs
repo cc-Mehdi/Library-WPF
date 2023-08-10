@@ -127,7 +127,7 @@ namespace Library.App.Pages
                     //create new uniq name
                     string imageName_new = Guid.NewGuid().ToString();
                     //get image extension
-                    var extension = Path.GetExtension(imgUser.Source.ToString());
+                    var extension = Path.GetExtension(imgBook.Source.ToString());
                     //get complete image path for save
                     string fullImagePath = @"images\" + imageName_new + extension;
 
@@ -152,7 +152,7 @@ namespace Library.App.Pages
                     _unitOfWork.Book.Add(newBook);
                     _unitOfWork.Save();
 
-                    dgvBooks.ItemsSource = _unitOfWork.Book.GetAll();
+                    dgvBooks.ItemsSource = BookList = _unitOfWork.Book.GetAll();
                     MessageBox.Show("عملیات با موفقیت انجام شد", "موفق", MessageBoxButton.OK, MessageBoxImage.Asterisk);
                 }
                 else
@@ -214,6 +214,31 @@ namespace Library.App.Pages
             {
                 txtUserName.Text = txtEmail.Text = txtPassword.Text = "";
                 imgUser.Source = null;
+            }
+        }
+
+        private void txtBookCode_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txtBookCode.Text != "")
+                checkjustNumber(txtBookCode);
+            if (txtBookCode.Text != "")
+                Book = BookList.FirstOrDefault(u => u.Id == Convert.ToInt32(txtBookCode.Text));
+            if (Book != null)
+            {
+                txtBookName.Text = Book.BookName;
+                txtCategory.Text = Book.Category;
+                txtPrice.Text = Book.Price.ToString();
+                txtCount.Text = Book.Count.ToString();
+                txtLikes.Text = Book.Likes.ToString();
+                txtScores.Text = Book.Scores.ToString();
+                cbIsSpecial.IsChecked = Book.isSpecial;
+                imgBook.Source = new BitmapImage(new Uri(appRootPath + Book.Image));
+            }
+            else
+            {
+                txtBookName.Text = txtCategory.Text = txtPrice.Text = txtCount.Text = txtLikes.Text = txtScores.Text = "";
+                cbIsSpecial.IsChecked = false;
+                imgBook.Source = null;
             }
         }
 
